@@ -32,7 +32,7 @@ TEST(AddTest, AddStringifyPositive) {
     Op* test1 = new Op(2);
     Op* test2 = new Op(3);
     Add* test3 = new Add(test1, test2);
-    EXPECT_EQ(test3->stringify(), "2.000000+3.000000");
+    EXPECT_EQ(test3->stringify(), "2.000000 + 3.000000");
 }
 
 #endif //__OP_TEST_HPP__

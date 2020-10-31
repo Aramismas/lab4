@@ -6,12 +6,12 @@
 
 class Add : public Base {
     private: 
-        Op* exp1;
-        Op* exp2;
+        Base* exp1;
+        Base* exp2;
     public:
-        Add(Op* v1, Op* v2) : exp1(v1), exp2(v2), Base() { }
+        Add(Base* v1, Base* v2) : exp1(v1), exp2(v2), Base() { }
         virtual double evaluate() { return exp1->evaluate() + exp2->evaluate() ; }
-        virtual std::string stringify() { return exp1->stringify() + "+" + exp2->stringify(); }
+        virtual std::string stringify() { return exp1->stringify() + " + " + exp2->stringify(); }
 };
 
 #endif //add_h
