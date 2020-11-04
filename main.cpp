@@ -16,7 +16,6 @@ int main() {
     Base* seven = new Op(7);
     Base* four = new Op(4);
     Base* two = new Op(2);
-    
     Base* add = new Add(three, seven);
     std:: cout << add->stringify() << " = " << add->evaluate() << std::endl;
     Base* sub = new Sub(add, four);
