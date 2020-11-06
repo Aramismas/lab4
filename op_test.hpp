@@ -121,6 +121,12 @@ TEST(SubTest, SubStringifyNegative) {
     Sub* test3 = new Sub(test1, test2);
     EXPECT_EQ(test3->stringify(), "-2.000000 - 3.000000");
 }
+TEST(MultTest, CheckZero) {
+    Op* test1 = new Op(8);
+    Op* test2 = new Op(0);
+    Mult* test3 = new Mult(test1, test2);
+    EXPECT_EQ(test3->evaluate(), 0);
+}
 
 TEST(MultTest, MultEvalPositive) {
     Op* test1 = new Op(8);
@@ -134,6 +140,15 @@ TEST(PowTest, PowEval) {
     Pow* test3 = new Pow(test1, test2);
     EXPECT_EQ(test3->evaluate(), 8);
 }
+
+TEST(PowTest, PowEvaltoTheZero) {
+    Op* test1 = new Op(2);
+    Op* test2 = new Op(0);
+    Pow* test3 = new Pow(test1, test2);
+    EXPECT_EQ(test3->evaluate(), 1);
+}
+
+
 TEST(DivTest, DivEvalPositive) {
     Op* test1 = new Op(7);
     Op* test2 = new Op(7);
@@ -141,4 +156,11 @@ TEST(DivTest, DivEvalPositive) {
     EXPECT_EQ(test3->evaluate(), 1);
 }
 
+
+TEST(DivTest, DivEvalNeg) {
+    Op* test1 = new Op(7);
+    Op* test2 = new Op(-7);
+    Div* test3 = new Div(test1, test2);
+    EXPECT_EQ(test3->evaluate(),-1 );
+}
 #endif //__OP_TEST_HPP__
